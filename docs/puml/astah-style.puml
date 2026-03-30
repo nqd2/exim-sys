@@ -1,0 +1,64 @@
+@startuml astah-style
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam roundcorner 0
+
+skinparam arrow {
+    Color #000000
+    Thickness 1
+}
+' --- CLASS DIAGRAM ---
+skinparam class {
+    BackgroundColor #FFFFCE
+    BorderColor #000000
+    ArrowColor #000000
+    AttributeIconSize 0 
+}
+
+skinparam interface {
+    BackgroundColor #E5E5FF
+    BorderColor #000000
+}
+
+' --- USE CASE DIAGRAM ---
+skinparam usecase {
+    BackgroundColor #FFFFCE
+    BorderColor #000000
+    ArrowColor #000000
+}
+
+skinparam actor {
+    BackgroundColor #FFFFCE
+    BorderColor #000000
+}
+
+' --- SEQUENCE DIAGRAM ---
+skinparam participant {
+    BackgroundColor #FFFFCE
+    BorderColor #000000
+}
+
+skinparam lifeline {
+    BackgroundColor #FFFFFF
+    BorderColor #000000
+}
+
+skinparam sequence {
+    ArrowColor #000000
+    LifeLineBorderColor #000000
+    LifeLineBackgroundColor #FFFFFF
+    BoxBackgroundColor #FFFFFF
+    BoxBorderColor #000000
+}
+
+' --- THÀNH PHẦN PHỤ (NOTES, PACKAGES) ---
+skinparam note {
+    BackgroundColor #FFFFFF
+    BorderColor #A9A9A9
+}
+
+skinparam package {
+    BackgroundColor transparent
+    BorderColor #000000
+}
