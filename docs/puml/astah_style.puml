@@ -1,8 +1,9 @@
-@startuml astah-style
+@startuml astah_style
 
 skinparam shadowing false
 skinparam defaultFontName Arial
 skinparam roundcorner 0
+skinparam linetype polyline
 
 skinparam arrow {
     Color #000000

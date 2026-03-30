@@ -15,35 +15,86 @@ Nhóm 15
 
 ```plantuml
 @startuml
-!include ./puml/usecase-overview.puml
+!include ./puml/usecase_overview.puml
 @enduml
 ```
 
 **Giải thích về các tác nhân**
 
-- **Bộ phận bán hàng (Sales Department)**: lập và gửi danh sách yêu cầu nhập hàng (mã hàng, số lượng, đơn vị, ngày nhận mong muốn), theo dõi kết quả xử lý yêu cầu.
-- **Bộ phận đặt hàng quốc tế (International Ordering Department)**: tiếp nhận yêu cầu từ Sales, tìm Site phù hợp, thu thập thông tin tồn kho, ra quyết định phân bổ và gửi đơn đặt hàng đến Site.
-- **Site nhập khẩu (Overseas Import Site)**: cung cấp thông tin tồn kho, thông tin thời gian vận chuyển (tàu/hàng không), tiếp nhận và xử lý đơn đặt hàng.
-- **Bộ phận quản lý kho (Warehouse Management Department)**: tiếp nhận hàng thực tế, kiểm hàng và đối soát với đơn đặt, cập nhật hệ thống kho nội bộ.
-- **Quản trị hệ thống (System Administrator)**: quản lý tài khoản và phân quyền actor, quản trị dữ liệu dùng chung, giám sát vận hành và sao lưu/khôi phục dữ liệu.
+- **Bộ phận bán hàng (`SalesDepartment`)**: lập và gửi danh sách yêu cầu nhập hàng (mã hàng, số lượng, đơn vị, ngày nhận mong muốn), theo dõi kết quả xử lý yêu cầu.
+- **Bộ phận đặt hàng quốc tế (`InternationalOrderingDepartment`)**: tiếp nhận yêu cầu từ Sales, tìm Site phù hợp, thu thập thông tin tồn kho, ra quyết định phân bổ và gửi đơn đặt hàng đến Site.
+- **Site nhập khẩu (`OverseasImportSite`)**: cung cấp thông tin tồn kho, thông tin thời gian vận chuyển (tàu/hàng không), tiếp nhận và xử lý đơn đặt hàng.
+- **Bộ phận quản lý kho (`WarehouseManagementDepartment`)**: tiếp nhận hàng thực tế, kiểm hàng và đối soát với đơn đặt, cập nhật hệ thống kho nội bộ.
+- **Quản trị hệ thống (`SystemAdministrator`)**: quản lý tài khoản và phân quyền actor, quản trị dữ liệu dùng chung, giám sát vận hành và sao lưu/khôi phục dữ liệu.
 
 **Giải thích về các use case tổng quan**
 
 Các use case mức tổng quan trong hệ thống gồm:
 
-- **Manage Import Requests**: quản lý yêu cầu nhập hàng từ khâu tạo, gửi, theo dõi trạng thái đến điều chỉnh/hủy yêu cầu.
-- **Manage Site Information**: quản lý thông tin Site và dữ liệu phục vụ đặt hàng (danh mục mặt hàng kinh doanh, thời gian vận chuyển theo phương thức).
-- **Collect Inventory Data**: gửi yêu cầu kiểm tra tồn kho tới các Site và ghi nhận phản hồi tồn kho theo từng mặt hàng.
-- **Plan Import Allocation**: xác định phương án nhập hàng theo tiêu chí ưu tiên (tàu trước hàng không, tồn kho lớn hơn, số Site ít nhất) và kiểm tra khả năng đáp ứng ngày nhận mong muốn.
-- **Place Overseas Orders**: tạo và gửi đơn đặt hàng chính thức tới các Site được chọn.
-- **Receive and Reconcile Goods**: kiểm hàng thực nhận tại kho, đối soát với đơn đặt, ghi nhận sai lệch và cập nhật tồn kho.
-- **Administer System**: quản trị người dùng, phân quyền, dữ liệu dùng chung, nhật ký vận hành và sao lưu/khôi phục dữ liệu.
+- **ManageImportRequests**: quản lý yêu cầu nhập hàng từ khâu tạo, gửi, theo dõi trạng thái đến điều chỉnh/hủy yêu cầu.
+- **ManageSiteInformation**: quản lý thông tin Site và dữ liệu phục vụ đặt hàng (danh mục mặt hàng kinh doanh, thời gian vận chuyển theo phương thức).
+- **CollectInventoryData**: gửi yêu cầu kiểm tra tồn kho tới các Site và ghi nhận phản hồi tồn kho theo từng mặt hàng.
+- **PlanImportAllocation**: xác định phương án nhập hàng theo tiêu chí ưu tiên (tàu trước hàng không, tồn kho lớn hơn, số Site ít nhất) và kiểm tra khả năng đáp ứng ngày nhận mong muốn.
+- **PlaceOverseasOrders**: tạo và gửi đơn đặt hàng chính thức tới các Site được chọn.
+- **ReceiveAndReconcileGoods**: kiểm hàng thực nhận tại kho, đối soát với đơn đặt, ghi nhận sai lệch và cập nhật tồn kho.
+- **ManageSystem**: quản trị người dùng, phân quyền, dữ liệu dùng chung, nhật ký vận hành và sao lưu/khôi phục dữ liệu.
 
-  2. ## **Biểu đồ use case phân rã “Manage site”**
+  2. ## **Biểu đồ use case phân rã "ManageImportRequests"**
 
-  3. ## **Biểu đồ use case phân rã “Manage user”**
+```plantuml
+@startuml
+!include ./puml/usecase_manage_import_requests.puml
+@enduml
+```
 
-![][image2]
+  3. ## **Biểu đồ use case phân rã "ManageSiteInformation"**
+
+```plantuml
+@startuml
+!include ./puml/usecase_manage_site_information.puml
+@enduml
+```
+
+  4. ## **Biểu đồ use case phân rã "CollectInventoryData"**
+
+```plantuml
+@startuml
+!include ./puml/usecase_collect_inventory_data.puml
+@enduml
+```
+  
+  5. ## **Biểu đồ use case phân rã "PlanImportAllocation"**
+
+```plantuml
+@startuml
+!include ./puml/usecase_plan_import_allocation.puml
+@enduml
+```
+  
+  6. ## **Biểu đồ use case phân rã "PlaceOverseasOrders"**
+
+```plantuml
+@startuml
+!include ./puml/usecase_place_overseas_orders.puml
+@enduml
+```
+  
+  7. ## **Biểu đồ use case phân rã "ReceiveAndReconcileGoods"**
+
+```plantuml
+@startuml
+!include ./puml/usecase_receive_and_reconcile_goods.puml
+@enduml
+```
+  
+  8. ## **Biểu đồ use case phân rã "ManageSystem"**
+
+```plantuml
+@startuml
+!include ./puml/usecase_manage_system.puml
+@enduml
+```
+
 
 2. # **Đặc tả Use case**
 

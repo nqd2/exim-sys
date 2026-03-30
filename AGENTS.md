@@ -5,28 +5,29 @@
 - Trọng tâm hiện tại là các file trong `docs/` (SRS, phân tích actor/use case, PlantUML).
 
 ## Phạm vi chỉnh sửa
-- Được phép chỉnh sửa: `docs/**`, `.vscode/settings.json`, `AGENTS.md`.
+- Được phép chỉnh sửa: `docs/**`, `.vscode/settings.json`, `.gitignore`, `AGENTS.md`.
 - Không chỉnh sửa nội dung trong `docs/do-not-edit/**` trừ khi có yêu cầu rõ ràng từ người dùng.
 - Không tự ý đổi tên file đang được giảng viên/nhóm tham chiếu.
 
 ## Quy ước nội dung
 - Ngôn ngữ chính: tiếng Việt.
-- Tên use case nên nhất quán theo tiếng Anh ngắn gọn (ví dụ: `Manage Import Requests`).
+- Tên use case nên nhất quán theo tiếng Anh ngắn gọn (ví dụ: `ManageImportRequests`).
 - Nội dung phải bám sát đề bài trong `docs/Project BTL - HeThongDatHangNhapKhau 20252.docx.md`.
 - Tránh đưa thêm tính năng ngoài phạm vi bài toán nếu chưa có yêu cầu.
 
 ## Quy ước PlantUML
 - Tất cả sơ đồ `.puml` đặt trong `docs/puml/`.
 - Dùng style chung qua:
-  - `!include ./astah-style.puml` (khi file sơ đồ cùng thư mục `docs/puml`)
+  - `!include ./astah_style.puml` (khi file sơ đồ cùng thư mục `docs/puml`)
 - Với tài liệu markdown trong `docs/`, nhúng sơ đồ bằng:
   - `!include ./puml/<ten-file>.puml`
-- Giữ style Astah-like, đường nối thẳng/góc vuông theo `astah-style.puml`.
+- Giữ style Astah-like, đường nối thẳng/góc vuông theo `astah_style.puml`.
+- Biểu đồ phân rã use case (nhóm ITSS): `usecase_manage_import_requests.puml`, `usecase_manage_site_information.puml`, `usecase_collect_inventory_data.puml`, `usecase_plan_import_allocation.puml`, `usecase_place_overseas_orders.puml`, `usecase_receive_and_reconcile_goods.puml`, `usecase_manage_system.puml`.
 
 ## Render Markdown + PlantUML (VSCode)
 - Dùng extension `Markdown Preview Enhanced`.
 - Cấu hình jar tại `.vscode/settings.json`:
-  - `markdown-preview-enhanced.plantumlJarPath` trỏ tới `.jar/plantuml.jar`.
+  - `markdown-preview-enhanced.plantumlJarPath` trỏ tới `.jar/plantuml.jar` (phải là đường dẫn tuyệt đối).
 - Nếu render lỗi local jar, có thể dùng server:
   - `markdown-preview-enhanced.plantumlServer: "https://kroki.io/plantuml/svg/"`
 
@@ -38,7 +39,7 @@
 
 ## Naming convention
 - Tên file markdown: `<ten-use-case>.md` (ví dụ: `ManageImportRequests.md`).
-- Tên file PlantUML: `<ten-diagram>.puml` (ví dụ: `usecase-overview.puml`).
+- Tên file PlantUML: `<ten-diagram>.puml` (ví dụ: `usecase_overview.puml`).
 - Đặt tên trong biểu đồ và trường dữ liệu: tiếng Anh, ưu tiên chuẩn dạng identifier dễ đọc.
     - Tên actor: `PascalCase` (ví dụ: `SalesDepartment`, `SystemAdministrator`).
     - Tên use case: `PascalCase` theo cụm động từ (ví dụ: `ManageImportRequests`, `PlanImportAllocation`).

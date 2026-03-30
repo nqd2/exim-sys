@@ -1,1 +1,3 @@
 .vscode/settings.json
+docs/puml/*.svg
+docs/puml/*.png
