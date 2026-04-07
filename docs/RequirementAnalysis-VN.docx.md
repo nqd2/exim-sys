@@ -1091,28 +1091,223 @@ Các đặc tả chi tiết được lập theo mẫu bảng HTML thống nhất
   </tr>
 </table>
 
-## 3. Từ điển thuật ngữ
+## 3. Thiết kế màn hình
 
-Introduction to Glossary…
+### 3.1. UC-001 - ManageImportRequests
 
-### 3.1. Course
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th>STT</th>
+    <th>Mã màn hình</th>
+    <th>Tên màn hình</th>
+    <th>Chức năng chính</th>
+  </tr>
+  <tr><td>1</td><td>SC-001</td><td>ManageImportRequestsScreen</td><td>Màn hình tổng hợp để tạo/sửa/hủy yêu cầu nhập và theo dõi trạng thái xử lý.</td></tr>
+  <tr><td>2</td><td>SC-001-01</td><td>CreateImportRequestScreen</td><td>Nhập thông tin yêu cầu nhập theo mặt hàng, số lượng, ngày nhận mong muốn.</td></tr>
+  <tr><td>3</td><td>SC-001-02</td><td>ValidateImportRequestInputDialog</td><td>Kiểm tra hợp lệ dữ liệu và cảnh báo lỗi trước khi gửi yêu cầu.</td></tr>
+  <tr><td>4</td><td>SC-001-03</td><td>SubmitImportRequestConfirmation</td><td>Xác nhận gửi yêu cầu và hiển thị mã yêu cầu sau khi gửi thành công.</td></tr>
+  <tr><td>5</td><td>SC-001-04</td><td>TrackImportRequestStatusScreen</td><td>Theo dõi trạng thái yêu cầu nhập theo từng mốc xử lý.</td></tr>
+  <tr><td>6</td><td>SC-001-05</td><td>UpdateImportRequestScreen</td><td>Cập nhật thông tin yêu cầu nhập còn hiệu lực.</td></tr>
+  <tr><td>7</td><td>SC-001-06</td><td>CancelImportRequestDialog</td><td>Hủy yêu cầu nhập và ghi nhận lý do hủy.</td></tr>
+</table>
 
-…
+### 3.2. UC-002 - ManageSiteInformation
 
-### 3.2. Credit
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th>STT</th>
+    <th>Mã màn hình</th>
+    <th>Tên màn hình</th>
+    <th>Chức năng chính</th>
+  </tr>
+  <tr><td>1</td><td>SC-002</td><td>ManageSiteInformationScreen</td><td>Quản lý thông tin Site nhập khẩu, danh mục hàng và tham số vận chuyển.</td></tr>
+  <tr><td>2</td><td>SC-002-01</td><td>UpdateSiteProfileScreen</td><td>Cập nhật hồ sơ Site gồm thông tin định danh, liên hệ, khu vực, trạng thái hoạt động.</td></tr>
+  <tr><td>3</td><td>SC-002-02</td><td>UpdateDeliveryTimesByShipAndAirScreen</td><td>Cập nhật thời gian vận chuyển theo phương thức ship/air cho từng Site.</td></tr>
+  <tr><td>4</td><td>SC-002-03</td><td>UpdateSiteMerchandiseCatalogScreen</td><td>Cập nhật danh mục mặt hàng Site có thể cung cấp.</td></tr>
+  <tr><td>5</td><td>SC-002-04</td><td>NotifyOrderingDepartmentOfSiteChangesDialog</td><td>Gửi thông báo thay đổi thông tin Site tới bộ phận đặt hàng quốc tế.</td></tr>
+</table>
 
-…
+### 3.3. UC-003 - CollectInventoryData
 
-## 4. Đặc tả phụ trợ
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th>STT</th>
+    <th>Mã màn hình</th>
+    <th>Tên màn hình</th>
+    <th>Chức năng chính</th>
+  </tr>
+  <tr><td>1</td><td>SC-003</td><td>CollectInventoryDataScreen</td><td>Điều phối quá trình thu thập tồn kho từ nhiều Site cho danh sách mặt hàng cần nhập.</td></tr>
+  <tr><td>2</td><td>SC-003-01</td><td>FindCandidateSitesForMerchandiseScreen</td><td>Lọc và hiển thị danh sách Site ứng viên theo từng mặt hàng cần nhập.</td></tr>
+  <tr><td>3</td><td>SC-003-02</td><td>FilterMerchandiseListPerSiteScreen</td><td>Phân nhóm mặt hàng gửi hỏi tồn kho theo từng Site phù hợp.</td></tr>
+  <tr><td>4</td><td>SC-003-03</td><td>SendStockInquiryToSiteScreen</td><td>Tạo và gửi yêu cầu xác nhận tồn kho đến các Site đã chọn.</td></tr>
+  <tr><td>5</td><td>SC-003-04</td><td>ReceiveStockResponseFromSiteScreen</td><td>Nhận phản hồi tồn kho từ Site và hiển thị trạng thái phản hồi.</td></tr>
+  <tr><td>6</td><td>SC-003-05</td><td>PersistInventoryInformationFileScreen</td><td>Lưu dữ liệu tồn kho tổng hợp phục vụ bước phân bổ.</td></tr>
+</table>
 
-### 4.1. Chức năng
+### 3.4. UC-004 - PlanImportAllocation
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th>STT</th>
+    <th>Mã màn hình</th>
+    <th>Tên màn hình</th>
+    <th>Chức năng chính</th>
+  </tr>
+  <tr><td>1</td><td>SC-004</td><td>PlanImportAllocationScreen</td><td>Lập và xem phương án phân bổ nhập hàng theo ưu tiên giao hàng và năng lực Site.</td></tr>
+  <tr><td>2</td><td>SC-004-01</td><td>ProcessEachMerchandiseIndependentlyPanel</td><td>Xử lý phân bổ độc lập theo từng mặt hàng.</td></tr>
+  <tr><td>3</td><td>SC-004-02</td><td>CheckDesiredDeliveryFeasibilityPanel</td><td>Đánh giá khả năng đáp ứng ngày nhận mong muốn.</td></tr>
+  <tr><td>4</td><td>SC-004-03</td><td>RankSitesPanel</td><td>Xếp hạng Site theo tiêu chí ship trước, tồn kho cao hơn, ít Site hơn.</td></tr>
+  <tr><td>5</td><td>SC-004-04</td><td>SplitQuantityAcrossSelectedSitesPanel</td><td>Phân tách số lượng đặt sang các Site được chọn.</td></tr>
+  <tr><td>6</td><td>SC-004-05</td><td>InsufficientSupplyErrorDialog</td><td>Thông báo lỗi thiếu nguồn cung khi tổng tồn kho không đủ.</td></tr>
+</table>
+
+### 3.5. UC-005 - PlaceOverseasOrders
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th>STT</th>
+    <th>Mã màn hình</th>
+    <th>Tên màn hình</th>
+    <th>Chức năng chính</th>
+  </tr>
+  <tr><td>1</td><td>SC-005</td><td>PlaceOverseasOrdersScreen</td><td>Tạo và gửi đơn đặt hàng quốc tế dựa trên phương án phân bổ đã xác nhận.</td></tr>
+  <tr><td>2</td><td>SC-005-01</td><td>ComposeOrderLinesScreen</td><td>Soạn các dòng đơn hàng theo mặt hàng, số lượng, Site nhận đơn.</td></tr>
+  <tr><td>3</td><td>SC-005-02</td><td>SetDeliveryMeansShipOrAirDialog</td><td>Chọn phương thức giao hàng ship/air cho từng dòng đơn.</td></tr>
+  <tr><td>4</td><td>SC-005-03</td><td>TransmitOrdersToSelectedSitesScreen</td><td>Gửi đơn tới các Site được chọn và theo dõi trạng thái gửi.</td></tr>
+  <tr><td>5</td><td>SC-005-04</td><td>AcknowledgeOrderAtSiteScreen</td><td>Tiếp nhận xác nhận từ Site về đơn đã nhận xử lý.</td></tr>
+</table>
+
+### 3.6. UC-006 - ReceiveAndReconcileGoods
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th>STT</th>
+    <th>Mã màn hình</th>
+    <th>Tên màn hình</th>
+    <th>Chức năng chính</th>
+  </tr>
+  <tr><td>1</td><td>SC-006</td><td>ReceiveAndReconcileGoodsScreen</td><td>Tiếp nhận hàng, đối soát với đơn đặt hàng và cập nhật tồn kho nội bộ.</td></tr>
+  <tr><td>2</td><td>SC-006-01</td><td>LoadExpectedOrderQuantitiesScreen</td><td>Nạp dữ liệu số lượng dự kiến theo đơn hàng để làm chuẩn đối soát.</td></tr>
+  <tr><td>3</td><td>SC-006-02</td><td>RecordGoodsReceiptScreen</td><td>Ghi nhận số lượng thực nhận theo từng mặt hàng/đợt nhận hàng.</td></tr>
+  <tr><td>4</td><td>SC-006-03</td><td>CompareReceivedVsOrderedScreen</td><td>So sánh số lượng thực nhận với số lượng đặt để xác định chênh lệch.</td></tr>
+  <tr><td>5</td><td>SC-006-04</td><td>RecordQuantityDiscrepancyDialog</td><td>Ghi nhận chi tiết chênh lệch thiếu/thừa và nguyên nhân.</td></tr>
+  <tr><td>6</td><td>SC-006-05</td><td>UpdateInternalWarehouseStockScreen</td><td>Cập nhật tồn kho nội bộ sau khi hoàn tất đối soát.</td></tr>
+</table>
+
+### 3.7. UC-007 - ManageSystem
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th>STT</th>
+    <th>Mã màn hình</th>
+    <th>Tên màn hình</th>
+    <th>Chức năng chính</th>
+  </tr>
+  <tr><td>1</td><td>SC-007</td><td>ManageSystemScreen</td><td>Trang điều phối quản trị hệ thống cho quản trị viên.</td></tr>
+  <tr><td>2</td><td>SC-007-01</td><td>ManageUsersAndActorRolesScreen</td><td>Quản lý tài khoản người dùng, vai trò actor và phân quyền.</td></tr>
+  <tr><td>3</td><td>SC-007-02</td><td>ManageSharedMasterDataScreen</td><td>Quản trị danh mục dữ liệu dùng chung cho hệ thống.</td></tr>
+  <tr><td>4</td><td>SC-007-03</td><td>ViewCrossDepartmentOperationLogsScreen</td><td>Tra cứu nhật ký thao tác liên phòng ban.</td></tr>
+  <tr><td>5</td><td>SC-007-04</td><td>BackupAndRestoreBusinessDataScreen</td><td>Thiết lập sao lưu và phục hồi dữ liệu nghiệp vụ.</td></tr>
+</table>
+
+## 4. Thiết kế sơ đồ chuyển màn hình
+
+### 4.1. UC-001 - ManageImportRequests
+
+```plantuml
+!include ./puml/screen_transition_manage_import_requests.puml
+```
+
+### 4.2. UC-002 - ManageSiteInformation
+
+```plantuml
+!include ./puml/screen_transition_manage_site_information.puml
+```
+
+### 4.3. UC-003 - CollectInventoryData
+
+```plantuml
+!include ./puml/screen_transition_collect_inventory_data.puml
+```
+
+### 4.4. UC-004 - PlanImportAllocation
+
+```plantuml
+!include ./puml/screen_transition_plan_import_allocation.puml
+```
+
+### 4.5. UC-005 - PlaceOverseasOrders
+
+```plantuml
+!include ./puml/screen_transition_place_overseas_orders.puml
+```
+
+### 4.6. UC-006 - ReceiveAndReconcileGoods
+
+```plantuml
+!include ./puml/screen_transition_receive_and_reconcile_goods.puml
+```
+
+### 4.7. UC-007 - ManageSystem
+
+```plantuml
+!include ./puml/screen_transition_manage_system.puml
+```
+
+## 5. Từ điển thuật ngữ
+
+Mục này thống nhất các thuật ngữ nghiệp vụ, tác nhân và dữ liệu được sử dụng xuyên suốt tài liệu.
+
+### 5.1. Thuật ngữ nghiệp vụ và tác nhân
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th>STT</th>
+    <th>Thuật ngữ</th>
+    <th>Mô tả</th>
+  </tr>
+  <tr><td>1</td><td>Import Request</td><td>Yêu cầu nhập hàng do `SalesDepartment` khởi tạo, làm đầu vào cho toàn bộ quy trình đặt hàng nhập khẩu.</td></tr>
+  <tr><td>2</td><td>Import Allocation Plan</td><td>Phương án phân bổ số lượng đặt hàng theo từng Site và phương thức giao hàng.</td></tr>
+  <tr><td>3</td><td>Overseas Import Site (Site)</td><td>Đơn vị/địa điểm cung ứng hàng ở nước ngoài tham gia xử lý đơn đặt hàng.</td></tr>
+  <tr><td>4</td><td>SalesDepartment</td><td>Tác nhân tạo, cập nhật, hủy và theo dõi yêu cầu nhập hàng.</td></tr>
+  <tr><td>5</td><td>InternationalOrderingDepartment</td><td>Tác nhân điều phối thu thập tồn kho, lập phân bổ và phát hành đơn đặt hàng quốc tế.</td></tr>
+  <tr><td>6</td><td>WarehouseManagementDepartment</td><td>Tác nhân tiếp nhận hàng, đối soát số lượng và cập nhật tồn kho nội bộ.</td></tr>
+  <tr><td>7</td><td>SystemAdministrator</td><td>Tác nhân quản trị người dùng, phân quyền, dữ liệu dùng chung, log vận hành và sao lưu/phục hồi.</td></tr>
+  <tr><td>8</td><td>Merchandise</td><td>Mặt hàng được quản lý theo mã hàng, đơn vị tính và thông tin liên quan trong quy trình nhập khẩu.</td></tr>
+  <tr><td>9</td><td>Desired Delivery Date</td><td>Ngày mong muốn nhận hàng của từng mặt hàng trong yêu cầu nhập.</td></tr>
+  <tr><td>10</td><td>Stock Inquiry</td><td>Yêu cầu xác nhận tồn kho gửi từ hệ thống tới Site để thu thập khả năng cung ứng.</td></tr>
+</table>
+
+### 5.2. Thuật ngữ dữ liệu và vận hành hệ thống
+
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th>STT</th>
+    <th>Thuật ngữ</th>
+    <th>Mô tả</th>
+  </tr>
+  <tr><td>1</td><td>In-Stock Quantity</td><td>Số lượng tồn kho khả dụng của một mặt hàng tại một Site ở thời điểm phản hồi.</td></tr>
+  <tr><td>2</td><td>Delivery Days by Ship/Air</td><td>Số ngày vận chuyển dự kiến theo đường biển (`ship`) hoặc đường hàng không (`air`).</td></tr>
+  <tr><td>3</td><td>Order Line</td><td>Dòng chi tiết trong đơn đặt hàng gồm mã hàng, số lượng, Site và phương thức giao hàng.</td></tr>
+  <tr><td>4</td><td>Acknowledgement</td><td>Xác nhận của Site về việc đã nhận và tiếp nhận xử lý đơn đặt hàng.</td></tr>
+  <tr><td>5</td><td>Goods Receipt</td><td>Nghiệp vụ ghi nhận số lượng hàng thực tế khi hàng được tiếp nhận vào kho.</td></tr>
+  <tr><td>6</td><td>Quantity Discrepancy</td><td>Chênh lệch giữa số lượng đặt và số lượng thực nhận, có thể là thiếu hoặc thừa.</td></tr>
+  <tr><td>7</td><td>Operation Log</td><td>Nhật ký thao tác và sự kiện vận hành phục vụ giám sát, truy vết và kiểm tra.</td></tr>
+  <tr><td>8</td><td>Shared Master Data</td><td>Dữ liệu danh mục dùng chung (mã hàng, đơn vị tính, quy tắc cấu hình...) cho nhiều chức năng.</td></tr>
+  <tr><td>9</td><td>Backup</td><td>Bản sao dữ liệu được tạo theo lịch hoặc thủ công để đảm bảo khả năng khôi phục.</td></tr>
+  <tr><td>10</td><td>Restore</td><td>Quá trình phục hồi dữ liệu hệ thống từ bản sao lưu hợp lệ.</td></tr>
+</table>
+
+## 6. Đặc tả phụ trợ
+
+### 6.1. Chức năng
 
 Cxxx
 
-### 4.2. Hiệu năng
+### 6.2. Hiệu năng
 
 Xxxx
 
-### 4.3. Độ tin cậy
+### 6.3. Độ tin cậy
 
 …
